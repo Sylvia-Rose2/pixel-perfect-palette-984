@@ -13,9 +13,9 @@ const Footer = () => {
         {/* Logo */}
         <div>
           <h2 className="text-4xl lg:text-5xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
-            J&K
-          </h2>
-          <p className="mt-4 text-sm text-muted-foreground">
+          SR<sup className="text-[0.5em] align-super">2</sup>
+        </h2>
+        <p className="mt-4 text-sm text-muted-foreground">
             Independent Design Studio
           </p>
         </div>

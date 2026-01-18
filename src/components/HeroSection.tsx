@@ -12,7 +12,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          J&K
+          SR<sup className="text-[0.5em] align-super">2</sup>
         </motion.h1>
       </div>
 
