@@ -54,7 +54,7 @@ const projects = [
 
 const WorkSection = () => {
   return (
-    <section id="work" className="px-6 md:px-8 lg:px-12 py-20 lg:py-32 max-w-6xl mx-auto">
+    <section id="work" className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-32 max-w-7xl mx-auto">
       <div className="space-y-0">
         {projects.map((project, index) => (
           <ProjectCard key={project.id} {...project} index={index} />

@@ -12,32 +12,32 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, category, description, image, index }: ProjectCardProps) => {
   return (
     <motion.article 
-      className="group cursor-pointer border-t border-border py-8 lg:py-12"
+      className="group cursor-pointer border-t border-border py-6 sm:py-8 md:py-10 lg:py-12"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+      <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-start">
         {/* Left: Title */}
-        <div className="md:col-span-3">
-          <h3 className="text-sm md:text-base font-medium text-muted-foreground">
+        <div className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-2">
+          <h3 className="text-xs sm:text-sm font-medium text-muted-foreground">
             {title}
           </h3>
         </div>
         
         {/* Middle: Description */}
-        <div className="md:col-span-5">
-          <p className="text-sm md:text-base leading-relaxed text-foreground mb-4">
+        <div className="col-span-4 sm:col-span-4 md:col-span-5 lg:col-span-6">
+          <p className="text-xs sm:text-sm leading-relaxed text-foreground mb-3 sm:mb-4">
             {description}
           </p>
-          <span className="link-underline text-sm font-medium text-foreground">
-            LEARN MORE
+          <span className="link-underline text-xs sm:text-sm font-medium text-foreground uppercase tracking-wide">
+            Learn More
           </span>
         </div>
         
         {/* Right: Image */}
-        <div className="md:col-span-4">
+        <div className="col-span-4 sm:col-span-2 md:col-span-4 lg:col-span-4">
           <div className="relative overflow-hidden aspect-[4/3]">
             <img 
               src={image} 
