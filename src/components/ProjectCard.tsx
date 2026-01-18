@@ -4,48 +4,49 @@ interface ProjectCardProps {
   id: string;
   title: string;
   category: string;
-  location: string;
-  year: string;
+  description: string;
   image: string;
   index: number;
 }
 
-const ProjectCard = ({ id, title, category, location, year, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, description, image, index }: ProjectCardProps) => {
   return (
     <motion.article 
-      className="project-card group cursor-pointer"
-      initial={{ opacity: 0, y: 30 }}
+      className="group cursor-pointer border-t border-border py-8 lg:py-12"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <div className="relative overflow-hidden aspect-[4/3] mb-4">
-        <img 
-          src={image} 
-          alt={title}
-          className="project-image w-full h-full object-cover transition-transform duration-700"
-        />
-        <div className="project-overlay absolute inset-0 bg-foreground/10 opacity-0 transition-opacity duration-500" />
-      </div>
-      
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-        <div className="space-y-1">
-          <span className="meta-text">{id}</span>
-          <h3 className="text-lg md:text-xl font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+        {/* Left: Title */}
+        <div className="md:col-span-3">
+          <h3 className="text-sm md:text-base font-medium text-muted-foreground">
             {title}
           </h3>
         </div>
         
-        <div className="flex flex-col items-start md:items-end text-sm text-muted-foreground">
-          <span>{category}</span>
-          <span>{location}</span>
-          <span>{year}</span>
+        {/* Middle: Description */}
+        <div className="md:col-span-5">
+          <p className="text-sm md:text-base leading-relaxed text-foreground mb-4">
+            {description}
+          </p>
+          <span className="link-underline text-sm font-medium text-foreground">
+            LEARN MORE
+          </span>
+        </div>
+        
+        {/* Right: Image */}
+        <div className="md:col-span-4">
+          <div className="relative overflow-hidden aspect-[4/3]">
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
         </div>
       </div>
-      
-      <span className="link-underline text-sm mt-3 inline-block text-muted-foreground group-hover:text-foreground transition-colors">
-        View Case Study
-      </span>
     </motion.article>
   );
 };
