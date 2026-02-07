@@ -12,9 +12,15 @@ const Footer = () => {
       >
         {/* Logo */}
         <div>
-          <h2 className="text-3xl lg:text-4xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
-            Sylvia Robles
-          </h2>
+          <div className="flex items-center gap-3">
+            <span className="text-3xl lg:text-4xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
+              SR<sup className="text-[0.5em] align-super">2</sup>
+            </span>
+            <div className="flex flex-col leading-tight text-base lg:text-lg font-medium tracking-tight">
+              <span>Sylvia</span>
+              <span>Robles</span>
+            </div>
+          </div>
           <p className="mt-4 text-sm text-muted-foreground">
             Creative Technologist & Fabricator
           </p>

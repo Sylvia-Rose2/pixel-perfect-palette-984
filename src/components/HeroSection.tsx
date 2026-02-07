@@ -6,14 +6,18 @@ const HeroSection = () => {
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-screen p-6 md:p-8 lg:p-12">
       {/* Logo */}
       <div className="col-span-1 lg:col-span-12 pt-4">
-        <motion.h1 
-          className="monogram"
+        <motion.div 
+          className="flex items-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Sylvia Robles
-        </motion.h1>
+          <span className="monogram">SR<sup className="text-[0.5em] align-super">2</sup></span>
+          <div className="flex flex-col leading-tight text-lg md:text-xl font-medium tracking-tight">
+            <span>Sylvia</span>
+            <span>Robles</span>
+          </div>
+        </motion.div>
       </div>
 
       {/* Hero Image */}
