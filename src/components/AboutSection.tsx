@@ -12,8 +12,9 @@ const AboutSection = () => {
         className="mb-16 lg:mb-24"
       >
         <p className="editorial-text max-w-3xl text-xl lg:text-2xl leading-relaxed">
-          The best identities are memory machines — vessels for experiences 
-          and emotions that deepen in meaning, through use and time.
+          I see mathematics as a natural science—a universal language that describes the world 
+          around us. I use math to inspire art and design, and I use art as a way to teach 
+          mathematical concepts.
         </p>
       </motion.div>
 
@@ -27,12 +28,17 @@ const AboutSection = () => {
         >
           <img 
             src={portrait} 
-            alt="Portrait"
+            alt="Sylvia Robles"
             className="w-full max-w-sm aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
           />
           <h3 className="text-2xl lg:text-3xl mt-6 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-            About Me
+            Background
           </h3>
+          <p className="text-sm text-muted-foreground">
+            ATLAS Institute, CU Boulder<br />
+            Creative Technology & Design MFA<br />
+            Mathematics, CSU
+          </p>
         </motion.div>
 
         <motion.div 
@@ -43,19 +49,26 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <p className="editorial-text mb-6">
-            I'm a designer with a focus on brand identity, visual systems, and process-oriented 
-            creative work. A conceptual thinker with cultural acuity, I bring a long view — 
-            transforming the abstract into the actionable.
+            I'm graduating from the ATLAS Institute's Creative Technology and Design master's program 
+            at CU Boulder with a background in mathematics from CSU. My work sits at the intersection 
+            of computational design, physical fabrication, interactive technology, and STEM education.
           </p>
           <p className="editorial-text mb-6">
-            A believer in simplicity without being simplistic, I founded this practice to unite 
-            strategy and structure in the service of enduring work. My approach combines rigorous 
-            research with intuitive creativity, resulting in identities that resonate deeply with 
-            audiences.
+            My process usually starts with a goal: fix a problem or communicate an idea. From there, 
+            I research, experiment, and build. I'm equally comfortable writing code in Grasshopper or 
+            Processing as I am working with wood, paper, or electronics. I like the precision of 
+            computational design and the tactile satisfaction of hands-on fabrication—and I like 
+            combining them.
+          </p>
+          <p className="editorial-text mb-6">
+            At ATLAS, I've had opportunities I didn't expect. Through CU Boulder's We Are Water program, 
+            I designed and built custom interactive water education exhibits for communities in Hopi, 
+            Arizona and Alamosa, Colorado. I've worked with Denver artist Sammy Lee, helping fabricate 
+            pieces for her MCA exhibition and integrating sensors and lighting into her work.
           </p>
           <p className="editorial-text">
-            Over the years, I've had the privilege of working with startups, established brands, 
-            and cultural institutions across technology, wellness, finance, and the arts.
+            I'm looking for work in museums, fabrication, R&D, or independent contract work—places 
+            where I can solve problems creatively and help people see familiar things in new ways.
           </p>
         </motion.div>
       </div>

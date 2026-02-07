@@ -12,7 +12,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          SR<sup className="text-[0.5em] align-super">2</sup>
+          Sylvia Robles
         </motion.h1>
       </div>
 
@@ -25,7 +25,7 @@ const HeroSection = () => {
       >
         <img 
           src={heroStudio} 
-          alt="Design Studio"
+          alt="Creative Technology Work"
           className="w-full h-[50vh] lg:h-[70vh] object-cover"
         />
       </motion.div>
@@ -38,38 +38,30 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className="space-y-8">
-          <p className="editorial-text max-w-md">
-            I'm an independent designer specializing in brand identity and digital experiences. 
-            I create work that is conceptually rigorous, formally restrained, and culturally engaged. 
-            With over a decade of experience, I balance intuition and intention—designing systems 
-            that adapt, connect, and endure.
-          </p>
+          <div>
+            <p className="meta-text mb-2">Creative Technologist & Fabricator</p>
+            <p className="editorial-text max-w-md">
+              I work at the intersection of math, art, and hands-on making. I use mathematics as both 
+              inspiration and educational tool—designing pieces that make abstract concepts tangible 
+              and creating interactive experiences that help people see the world through a different lens.
+            </p>
+          </div>
 
           <div className="space-y-4 text-sm">
             <a 
-              href="https://instagram.com/yourhandle" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:aivlysfluffy321@gmail.com"
               className="link-underline block"
             >
-              @yourhandle
-            </a>
-            <a 
-              href="mailto:hello@yoursite.com"
-              className="link-underline block"
-            >
-              hello@yoursite.com
+              aivlysfluffy321@gmail.com
             </a>
             <div className="text-foreground/80">
-              <p>123 Creative Street</p>
-              <p>Studio 101</p>
-              <p>New York, NY 10001</p>
+              <p>Colorado Based</p>
             </div>
             <a 
-              href="tel:+11234567890"
+              href="tel:+12532520439"
               className="link-underline block"
             >
-              +1 (123) 456-7890
+              (253) 252-0439
             </a>
           </div>
         </div>
