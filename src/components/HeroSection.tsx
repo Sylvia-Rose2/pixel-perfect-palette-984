@@ -7,13 +7,13 @@ const HeroSection = () => {
       {/* Logo */}
       <div className="col-span-1 lg:col-span-12 pt-4">
         <motion.div 
-          className="flex items-center gap-4"
+          className="flex items-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="monogram">SR<sup className="text-[0.5em] align-super">2</sup></span>
-          <div className="flex flex-col leading-tight text-lg md:text-xl font-medium tracking-tight">
+          <div className="flex flex-col leading-[0.85] text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
             <span>Sylvia</span>
             <span>Robles</span>
           </div>
