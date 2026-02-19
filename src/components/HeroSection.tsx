@@ -12,7 +12,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="border-2 border-foreground px-3 py-1 md:px-4 md:py-2 text-4xl md:text-6xl lg:text-7xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
+          <span className="border-[3px] border-foreground px-4 py-2 md:px-5 md:py-3 text-4xl md:text-6xl lg:text-7xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
             SR<sup className="text-[0.5em] align-super">2</sup>
           </span>
           <span className="text-2xl md:text-4xl lg:text-5xl tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
