@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroStudio from "@/assets/hero-studio.jpg";
+import { categories } from "@/data/projects";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -91,9 +93,9 @@ const HeroSection = () => {
               Projects <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-background border border-border">
-              {["Interactive Installations", "Computational Design", "Mathematical Art", "Fabrication & Making", "Exhibit Design"].map((cat) => (
-                <DropdownMenuItem key={cat} className="text-sm cursor-pointer">
-                  {cat}
+              {categories.map((cat) => (
+                <DropdownMenuItem key={cat.slug} asChild className="text-sm cursor-pointer">
+                  <Link to={`/projects/${cat.slug}`}>{cat.name}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
