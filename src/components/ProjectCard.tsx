@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ProjectCardProps {
   id: string;
@@ -6,10 +7,13 @@ interface ProjectCardProps {
   category: string;
   description: string;
   image: string;
+  detailImage?: string;
   index: number;
 }
 
-const ProjectCard = ({ title, category, description, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, description, image, detailImage, index }: ProjectCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.article 
       className="group cursor-pointer border-t border-border py-6 sm:py-8 md:py-10 lg:py-12"
@@ -17,6 +21,7 @@ const ProjectCard = ({ title, category, description, image, index }: ProjectCard
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
       viewport={{ once: true, margin: "-50px" }}
+      onClick={() => setIsOpen(!isOpen)}
     >
       <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-start">
         {/* Left: Title */}
@@ -32,7 +37,7 @@ const ProjectCard = ({ title, category, description, image, index }: ProjectCard
             {description}
           </p>
           <span className="link-underline text-xs sm:text-sm font-medium text-foreground uppercase tracking-wide">
-            Learn More
+            {isOpen ? "Close" : "Learn More"}
           </span>
         </div>
         
@@ -47,6 +52,31 @@ const ProjectCard = ({ title, category, description, image, index }: ProjectCard
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isOpen && detailImage && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pt-6 sm:pt-8 grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
+              <div className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-2" />
+              <div className="col-span-4 sm:col-span-6 md:col-span-9 lg:col-span-10">
+                <div className="relative overflow-hidden aspect-[4/3] max-w-2xl">
+                  <img
+                    src={detailImage}
+                    alt={`${title} — detail`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.article>
   );
 };

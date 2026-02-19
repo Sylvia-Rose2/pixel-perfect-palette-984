@@ -6,6 +6,8 @@ import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
+import beehiveFront from "@/assets/beehive-front.jpg";
+import beehiveBack from "@/assets/beehive-back.jpg";
 
 const projects = [
   {
@@ -41,7 +43,8 @@ const projects = [
     title: "Hyperbolic Beehive",
     category: "Computational Origami",
     description: "Inspired by hyperbolic geometry, this large origami piece was laser-scored and hand-folded, finished with gold pigments against black paper. A second piece now lives in the Human Design Hotel in Montreal.",
-    image: project5,
+    image: beehiveFront,
+    detailImage: beehiveBack,
   },
   {
     id: "SR006",
