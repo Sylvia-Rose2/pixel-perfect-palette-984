@@ -8,6 +8,11 @@ import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 import beehiveFront from "@/assets/beehive-front.jpg";
 import beehiveBack from "@/assets/beehive-back.jpg";
+import spUncenteredGrid from "@/assets/sp-uncentered-grid.jpg";
+import spAllmodels from "@/assets/sp-allmodels.jpg";
+import spAtlas from "@/assets/sp-atlas.jpg";
+import spCenteredgrid from "@/assets/sp-centeredgrid.jpg";
+import spHexagonal from "@/assets/sp-hexagonal.jpg";
 
 const projects = [
   {
@@ -15,7 +20,8 @@ const projects = [
     title: "Stereographica Prototype",
     category: "Mathematical Art & Design",
     description: "Physical models executing stereographic projection in artistic form. When light is positioned at one specific point, it casts a precise and unexpected shadow. Designed using CAD, Processing, Grasshopper, and TouchDesigner.",
-    image: project1,
+    image: spUncenteredGrid,
+    detailImages: [spAllmodels, spAtlas, spCenteredgrid, spHexagonal],
   },
   {
     id: "SR002",
@@ -44,7 +50,7 @@ const projects = [
     category: "Computational Origami",
     description: "Inspired by hyperbolic geometry, this large origami piece was laser-scored and hand-folded, finished with gold pigments against black paper. A second piece now lives in the Human Design Hotel in Montreal.",
     image: beehiveFront,
-    detailImage: beehiveBack,
+    detailImages: [beehiveBack],
   },
   {
     id: "SR006",
