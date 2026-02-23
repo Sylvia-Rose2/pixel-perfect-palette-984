@@ -26,28 +26,19 @@ const CategoryPage = () => {
   return (
     <main className="min-h-screen bg-background">
       <header className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-8 pb-4">
-        <Link
-          to="/"
-          className="link-underline text-sm font-medium inline-flex items-center gap-2 mb-8"
-        >
-          <ArrowLeft className="h-4 w-4" /> Home
-        </Link>
-        <div className="flex items-center gap-6">
-          <motion.h1
-            className="text-3xl md:text-5xl tracking-tight"
-            style={{ fontFamily: "var(--font-display)" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+        <div className="flex items-center gap-6 mb-8">
+          <Link
+            to="/"
+            className="link-underline text-sm font-medium inline-flex items-center gap-2"
           >
-            {category.name}
-          </motion.h1>
+            <ArrowLeft className="h-4 w-4" /> Home
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="link-underline text-sm font-medium flex items-center gap-1 outline-none">
-              Switch Category <ChevronDown className="h-3 w-3" />
+              Projects <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="bg-background border border-border">
-              {categories.filter(c => c.slug !== slug).map((cat) => (
+              {categories.map((cat) => (
                 <DropdownMenuItem key={cat.slug} asChild className="text-sm cursor-pointer">
                   <Link to={`/projects/${cat.slug}`}>{cat.name}</Link>
                 </DropdownMenuItem>
