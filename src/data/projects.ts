@@ -4,6 +4,9 @@ import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
+import cardinalArcanaClosed from "@/assets/cardinal-arcana-closed.jpg";
+import cardinalArcanaOpen from "@/assets/cardinal-arcana-open.jpg";
+import cardinalArcanaVideo from "@/assets/cardinal-arcana.webm";
 import beehiveFront from "@/assets/beehive-front.jpg";
 import beehiveBack from "@/assets/beehive-back.jpg";
 import spUncenteredGrid from "@/assets/sp-uncentered-grid.jpg";
@@ -20,6 +23,7 @@ export interface Project {
   description: string;
   image: string;
   detailImages?: string[];
+  detailVideos?: string[];
 }
 
 export const allProjects: Project[] = [
@@ -58,7 +62,9 @@ export const allProjects: Project[] = [
     date: "2024",
     description:
       "A tech-infused take on classic magic. This miniature stage conceals RFID technology beneath its surface to pull off a card reveal trick, making for an entertaining party trick with the right sleight of hand.",
-    image: project4,
+    image: cardinalArcanaOpen,
+    detailImages: [cardinalArcanaClosed],
+    detailVideos: [cardinalArcanaVideo],
   },
   {
     id: "SR005",
@@ -109,7 +115,7 @@ export const categories: Category[] = [
   {
     name: "Interactive Installations",
     slug: "interactive-installations",
-    projectIds: ["SR004", "SR003", "SR002"],
+    projectIds: ["SR003", "SR002", "SR004"],
   },
   {
     name: "Computational Design",

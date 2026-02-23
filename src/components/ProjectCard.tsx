@@ -8,10 +8,11 @@ interface ProjectCardProps {
   description: string;
   image: string;
   detailImages?: string[];
+  detailVideos?: string[];
   index: number;
 }
 
-const ProjectCard = ({ title, category, description, image, detailImages, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, description, image, detailImages, detailVideos, index }: ProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -54,7 +55,7 @@ const ProjectCard = ({ title, category, description, image, detailImages, index 
       </div>
 
       <AnimatePresence>
-        {isOpen && detailImages && detailImages.length > 0 && (
+        {isOpen && ((detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0)) && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -65,11 +66,20 @@ const ProjectCard = ({ title, category, description, image, detailImages, index 
             <div className="pt-6 sm:pt-8 grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
               <div className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-2" />
               <div className="col-span-4 sm:col-span-6 md:col-span-9 lg:col-span-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {detailImages.map((img, i) => (
+                {detailImages?.map((img, i) => (
                   <div key={i} className="relative overflow-hidden aspect-[4/3]">
                     <img
                       src={img}
                       alt={`${title} — detail ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+                {detailVideos?.map((vid, i) => (
+                  <div key={`vid-${i}`} className="relative overflow-hidden aspect-[4/3]">
+                    <video
+                      src={vid}
+                      controls
                       className="w-full h-full object-cover"
                     />
                   </div>
