@@ -46,6 +46,15 @@ const CategoryPage = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+        <motion.h1
+          className="text-3xl md:text-5xl tracking-tight"
+          style={{ fontFamily: "var(--font-display)" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {category.name}
+        </motion.h1>
       </header>
 
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-32 w-full">
