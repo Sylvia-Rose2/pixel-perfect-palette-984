@@ -80,28 +80,34 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex gap-6 mt-12 lg:mt-0 items-center">
-          <a href="#work" className="link-underline text-sm font-medium">
-            Work
-          </a>
-          <a href="#about" className="link-underline text-sm font-medium">
-            About
-          </a>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="link-underline text-sm font-medium flex items-center gap-1 outline-none">
-              Projects <ChevronDown className="h-3 w-3" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="bg-background border border-border">
-              {categories.map((cat) => (
-                <DropdownMenuItem key={cat.slug} asChild className="text-sm cursor-pointer">
-                  <Link to={`/projects/${cat.slug}`}>{cat.name}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </nav>
       </motion.div>
+
+      {/* Navigation */}
+      <motion.nav 
+        className="col-span-1 lg:col-span-12 flex gap-8 md:gap-12 items-center border-t border-border pt-6 pb-2"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+      >
+        <a href="#work" className="link-underline text-xl md:text-2xl lg:text-3xl tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          Work
+        </a>
+        <a href="#about" className="link-underline text-xl md:text-2xl lg:text-3xl tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          About
+        </a>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="link-underline text-xl md:text-2xl lg:text-3xl tracking-tight flex items-center gap-2 outline-none" style={{ fontFamily: 'var(--font-display)' }}>
+            Projects <ChevronDown className="h-5 w-5 md:h-6 md:w-6" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="bg-background border border-border">
+            {categories.map((cat) => (
+              <DropdownMenuItem key={cat.slug} asChild className="text-sm cursor-pointer">
+                <Link to={`/projects/${cat.slug}`}>{cat.name}</Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </motion.nav>
     </section>
   );
 };
