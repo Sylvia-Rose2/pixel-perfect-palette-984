@@ -113,7 +113,7 @@ export const allProjects: Project[] = [
     fullDescription:
       "Drawing on my knowledge of origami, I designed a completely flat-folding chair to fit under my floor table. After testing the design at smaller scales with paper and cardboard, I digitized the pattern and cut the framework from ¼-inch plywood using a laser cutter. I then integrated magnets into the wood and inserted them into a sewn shell. The final piece is easy to store and, thanks to the magnets and geometric design, can support up to 200 lbs.",
     image: isuSitting,
-    detailImages: [project6, isuFolded, isuUnfolded],
+    detailImages: [isuFolded, isuUnfolded],
     detailVideos: [origamiChairVideo],
   },
   {
@@ -137,7 +137,7 @@ export const allProjects: Project[] = [
     fullDescription:
       "Another floor-level chair for my floor table, this project challenged and improved my woodworking skills. Built using standard woodshop tools and MDF, the final design features a hand-knit cushion, supports up to 230 lbs, and rocks comfortably.",
     image: rockingchairSide,
-    detailImages: [project1, rockingchairSitting, rockingchairFront, rockingchairBack],
+    detailImages: [rockingchairSitting, rockingchairFront, rockingchairBack],
   },
 ];
 
