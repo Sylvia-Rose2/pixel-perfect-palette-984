@@ -18,6 +18,10 @@ import rockingchairSide from "@/assets/rockingchair-side.jpg";
 import rockingchairSitting from "@/assets/rockingchair-sitting.jpg";
 import rockingchairFront from "@/assets/rockingchair-front.jpg";
 import rockingchairBack from "@/assets/rockingchair-back.jpg";
+import isuSitting from "@/assets/isu-sitting.jpg";
+import isuFolded from "@/assets/isu-folded.jpg";
+import isuUnfolded from "@/assets/isu-unfolded.jpg";
+import origamiChairVideo from "@/assets/origami-chair.webm";
 
 export interface DetailImage {
   src: string;
@@ -108,7 +112,9 @@ export const allProjects: Project[] = [
       "A completely flat-folding chair designed using origami principles—cut from plywood with integrated magnets, supporting up to 200 lbs.",
     fullDescription:
       "Drawing on my knowledge of origami, I designed a completely flat-folding chair to fit under my floor table. After testing the design at smaller scales with paper and cardboard, I digitized the pattern and cut the framework from ¼-inch plywood using a laser cutter. I then integrated magnets into the wood and inserted them into a sewn shell. The final piece is easy to store and, thanks to the magnets and geometric design, can support up to 200 lbs.",
-    image: project6,
+    image: isuSitting,
+    detailImages: [project6, isuFolded, isuUnfolded],
+    detailVideos: [origamiChairVideo],
   },
   {
     id: "SR007",
