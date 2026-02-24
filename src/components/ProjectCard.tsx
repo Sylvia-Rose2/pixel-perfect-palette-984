@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { DetailImage } from "@/data/projects";
 
 interface ProjectCardProps {
   id: string;
@@ -10,7 +11,7 @@ interface ProjectCardProps {
   fullDescription?: string;
   links?: { label: string; url: string }[];
   image: string;
-  detailImages?: string[];
+  detailImages?: (string | DetailImage)[];
   detailVideos?: string[];
   index: number;
 }
@@ -125,6 +126,8 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                 {((detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0)) && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     {detailImages?.map((img, i) => {
+                      const src = typeof img === "string" ? img : img.src;
+                      const caption = typeof img === "string" ? undefined : img.caption;
                       const isWide = i === 0 && (detailImages.length % 2 !== 0);
                       return (
                         <div
@@ -132,10 +135,15 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                           className={`relative overflow-hidden ${isWide ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}
                         >
                           <img
-                            src={img}
-                            alt={`${title} — detail ${i + 1}`}
+                            src={src}
+                            alt={caption || `${title} — detail ${i + 1}`}
                             className="w-full h-full object-cover"
                           />
+                          {caption && (
+                            <span className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-[10px] sm:text-xs px-3 py-1.5 tracking-wide">
+                              {caption}
+                            </span>
+                          )}
                         </div>
                       );
                     })}

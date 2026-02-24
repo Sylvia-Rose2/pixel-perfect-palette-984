@@ -14,6 +14,15 @@ import spAllmodels from "@/assets/sp-allmodels.jpg";
 import spAtlas from "@/assets/sp-atlas.jpg";
 import spCenteredgrid from "@/assets/sp-centeredgrid.jpg";
 import spHexagonal from "@/assets/sp-hexagonal.jpg";
+import rockingchairSide from "@/assets/rockingchair-side.jpg";
+import rockingchairSitting from "@/assets/rockingchair-sitting.jpg";
+import rockingchairFront from "@/assets/rockingchair-front.jpg";
+import rockingchairBack from "@/assets/rockingchair-back.jpg";
+
+export interface DetailImage {
+  src: string;
+  caption?: string;
+}
 
 export interface Project {
   id: string;
@@ -24,7 +33,7 @@ export interface Project {
   fullDescription?: string;
   links?: { label: string; url: string }[];
   image: string;
-  detailImages?: string[];
+  detailImages?: (string | DetailImage)[];
   detailVideos?: string[];
 }
 
@@ -121,7 +130,8 @@ export const allProjects: Project[] = [
       "A floor-level rocking chair built from MDF with a hand-knit cushion—supports up to 230 lbs and rocks comfortably.",
     fullDescription:
       "Another floor-level chair for my floor table, this project challenged and improved my woodworking skills. Built using standard woodshop tools and MDF, the final design features a hand-knit cushion, supports up to 230 lbs, and rocks comfortably.",
-    image: project1,
+    image: rockingchairSide,
+    detailImages: [project1, rockingchairSitting, rockingchairFront, rockingchairBack],
   },
 ];
 
