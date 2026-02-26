@@ -65,7 +65,8 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
             <img 
               src={image} 
               alt={title}
-              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${imagePosition ? `object-${imagePosition}` : ''}`}
+              style={imagePosition ? { objectPosition: `center ${imagePosition}` } : undefined}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
         </div>
