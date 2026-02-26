@@ -40,6 +40,7 @@ export interface Project {
   title: string;
   category: string;
   date?: string;
+  imagePosition?: string;
   description: string;
   fullDescription?: string;
   links?: { label: string; url: string }[];
@@ -137,6 +138,7 @@ export const allProjects: Project[] = [
     fullDescription:
       "Using computational design tools (Grasshopper), I recreated the precise mathematical patterns of origami shift vases originally designed by Rebecca Gieseking, then laser-cut the pattern onto paper. The shift illusion makes it appear as three separate pieces glued together, but this is actually one continuous piece of uncut, folded paper.",
     image: shiftVaseMain,
+    imagePosition: "bottom",
     detailImages: [shiftVasePattern1, shiftVasePattern2, shiftVasePrototype],
   },
   {

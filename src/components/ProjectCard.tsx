@@ -7,6 +7,7 @@ interface ProjectCardProps {
   title: string;
   category: string;
   date?: string;
+  imagePosition?: string;
   description: string;
   fullDescription?: string;
   links?: { label: string; url: string }[];
@@ -16,7 +17,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-const ProjectCard = ({ title, category, date, description, fullDescription, links, image, detailImages, detailVideos, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, date, description, fullDescription, links, image, imagePosition, detailImages, detailVideos, index }: ProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const hasExpandedContent = fullDescription || (detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0);
@@ -64,7 +65,7 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
             <img 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${imagePosition ? `object-${imagePosition}` : ''}`}
             />
           </div>
         </div>
