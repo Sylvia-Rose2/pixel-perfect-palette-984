@@ -21,6 +21,7 @@ import rockingchairBack from "@/assets/rockingchair-back.jpg";
 import wawAlamosa1 from "@/assets/waw-alamosa-1.jpg";
 import wawAlamosa2 from "@/assets/waw-alamosa-2.jpg";
 import wawAlamosaInfowall from "@/assets/waw-alamosa-infowall.jpg";
+import shiftVaseMain from "@/assets/shift-vase-main.jpg";
 import shiftVasePattern1 from "@/assets/shift-vase-pattern1.png";
 import shiftVasePattern2 from "@/assets/shift-vase-pattern2.png";
 import shiftVasePrototype from "@/assets/shift-vase-prototype.png";
@@ -135,8 +136,8 @@ export const allProjects: Project[] = [
       "An origami shift vase computationally designed and laser-cut—one continuous piece of uncut, folded paper that appears as three separate parts.",
     fullDescription:
       "Using computational design tools (Grasshopper), I recreated the precise mathematical patterns of origami shift vases originally designed by Rebecca Gieseking, then laser-cut the pattern onto paper. The shift illusion makes it appear as three separate pieces glued together, but this is actually one continuous piece of uncut, folded paper.",
-    image: shiftVasePattern1,
-    detailImages: [shiftVasePattern2, shiftVasePrototype],
+    image: shiftVaseMain,
+    detailImages: [shiftVasePattern1, shiftVasePattern2, shiftVasePrototype],
   },
   {
     id: "SR008",
