@@ -18,6 +18,9 @@ import rockingchairSide from "@/assets/rockingchair-side.jpg";
 import rockingchairSitting from "@/assets/rockingchair-sitting.jpg";
 import rockingchairFront from "@/assets/rockingchair-front.jpg";
 import rockingchairBack from "@/assets/rockingchair-back.jpg";
+import wawAlamosa1 from "@/assets/waw-alamosa-1.jpg";
+import wawAlamosa2 from "@/assets/waw-alamosa-2.jpg";
+import wawAlamosaInfowall from "@/assets/waw-alamosa-infowall.jpg";
 import isuSitting from "@/assets/isu-sitting.jpg";
 import isuFolded from "@/assets/isu-folded.jpg";
 import isuUnfolded from "@/assets/isu-unfolded.jpg";
@@ -63,8 +66,12 @@ export const allProjects: Project[] = [
       "A custom interactive science exhibit for the San Luis Valley, featuring a 3×3-foot 3D-printed map with 300+ LEDs highlighting water-related geography.",
     fullDescription:
       "A custom interactive science exhibit educating visitors about water in the San Luis Valley. The centerpiece is a 3×3-foot 3D-printed map, assembled from multiple sections and hand-painted, with over 300 integrated LEDs highlighting significant water-related geography and locations. The exhibit also includes a matching educational wall.\n\nThis project was developed through We Are Water, a program under CU Boulder's Cooperative Institute for Research in Environmental Sciences. We collaborated with a local library in Alamosa and community members to ensure the exhibit would be meaningful to the community. Working with three other students, my primary roles included printing, assembling, and painting the map; operating CNC machines for laser-cutting wood and acrylic; prototyping; woodworking; and general assembly, electronics, painting, and gluing.",
-    links: [{ label: "More on the exhibit", url: "https://www.alamosacitizen.com/permanent-interactive-exhibit-we-are-water/" }],
-    image: project2,
+    links: [
+      { label: "We Are Water exhibit page", url: "https://wearewater.colorado.edu/index.php/exhibit/alamosa-exhibit" },
+      { label: "Alamosa Citizen article", url: "https://www.alamosacitizen.com/permanent-interactive-exhibit-we-are-water/" },
+    ],
+    image: wawAlamosa1,
+    detailImages: [wawAlamosa2, wawAlamosaInfowall],
   },
   {
     id: "SR003",
