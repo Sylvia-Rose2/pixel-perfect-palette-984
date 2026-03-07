@@ -27,7 +27,7 @@ const images: { src: string; position?: string }[] = [
   { src: galleryCalligraphy },                                  // 6 - rotated
   { src: galleryRockingCardboard },                             // 7
   { src: galleryImg2632, position: "center 20%" },             // 8 - show top
-  { src: galleryShiftVase, position: "center 15%" },           // 9 - show top
+  { src: galleryShiftVase, position: "center 60%" },           // 9 - show more middle/bottom
   { src: galleryWeaving },                                      // 10
   { src: galleryIsuProgress },                                  // 11
   { src: galleryImg3485 },                                      // 12
