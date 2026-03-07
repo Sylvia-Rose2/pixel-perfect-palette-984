@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import galleryWawPainting from "@/assets/gallery-waw-painting.jpg";
 import galleryShiftVase from "@/assets/gallery-shift-vase-prototype.jpg";
@@ -39,6 +39,7 @@ const images = [
 const Gallery = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const next = useCallback(() => {
     setDirection(1);
@@ -51,12 +52,14 @@ const Gallery = () => {
   }, []);
 
   useEffect(() => {
+    if (lightboxOpen) return;
     const timer = setInterval(next, 4500);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, lightboxOpen]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxOpen(false);
       if (e.key === "ArrowRight") next();
       if (e.key === "ArrowLeft") prev();
     };
@@ -71,72 +74,124 @@ const Gallery = () => {
   };
 
   return (
-    <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-28 w-full">
-      {/* Section header */}
-      <div className="mb-8 sm:mb-12">
-        <h2 className="text-xs sm:text-sm font-medium text-foreground uppercase tracking-widest">
-          Studio & Process
-        </h2>
-        <p className="text-xs text-muted-foreground mt-2 max-w-md">
-          Prototyping, fabricating, and problem-solving across disciplines
-        </p>
-      </div>
+    <>
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-28 w-full">
+        {/* Section header */}
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xs sm:text-sm font-medium text-foreground uppercase tracking-widest">
+            Studio & Process
+          </h2>
+          <p className="text-xs text-muted-foreground mt-2 max-w-md">
+            Prototyping, fabricating, and problem-solving across disciplines
+          </p>
+        </div>
 
-      {/* Slideshow */}
-      <div className="relative w-full aspect-[16/7] overflow-hidden bg-muted/20 group">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={current}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute inset-0 w-full h-full"
+        {/* Slideshow */}
+        <div
+          className="relative w-full aspect-[3/2] sm:aspect-[16/10] overflow-hidden bg-muted/20 group cursor-zoom-in"
+          onClick={() => setLightboxOpen(true)}
+        >
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={images[current]}
+                alt={`Studio & process photo ${current + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
+            aria-label="Previous"
           >
-            <img
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Dots */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setDirection(i > current ? 1 : -1);
+                  setCurrent(i);
+                }}
+                className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                  i === current ? "bg-white" : "bg-white/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm cursor-zoom-out"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightboxOpen(false)}
+          >
+            <button
+              className="absolute top-6 right-6 text-foreground/70 hover:text-foreground transition-colors"
+              onClick={() => setLightboxOpen(false)}
+              aria-label="Close"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <button
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </button>
+            <button
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
+              onClick={(e) => { e.stopPropagation(); next(); }}
+              aria-label="Next"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </button>
+            <motion.img
+              key={current}
               src={images[current]}
-              alt={`Studio & process photo ${current + 1}`}
-              className="w-full h-full object-cover"
+              alt="Expanded view"
+              className="max-w-[90vw] max-h-[90vh] object-contain"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
             />
           </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation arrows */}
-        <button
-          onClick={prev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
-          aria-label="Previous"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-opacity opacity-0 group-hover:opacity-100"
-          aria-label="Next"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
-
-        {/* Dots */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setDirection(i > current ? 1 : -1);
-                setCurrent(i);
-              }}
-              className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                i === current ? "bg-white" : "bg-white/40"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
