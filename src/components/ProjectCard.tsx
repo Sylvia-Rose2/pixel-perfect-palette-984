@@ -143,16 +143,6 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                   {/* Media gallery */}
                   {((detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0)) && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                      {detailVideos?.map((vid, i) => (
-                        <div key={`vid-${i}`} className="relative overflow-hidden sm:col-span-2 aspect-video">
-                          <video
-                            src={vid}
-                            controls
-                            className="w-full h-full object-contain bg-black/5"
-                            onClick={(e) => e.stopPropagation()}
-                          />
-                        </div>
-                      ))}
                       {detailImages?.map((img, i) => {
                         const src = typeof img === "string" ? img : img.src;
                         const caption = typeof img === "string" ? undefined : img.caption;
@@ -176,6 +166,16 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                           </div>
                         );
                       })}
+                      {detailVideos?.map((vid, i) => (
+                        <div key={`vid-${i}`} className="relative overflow-hidden sm:col-span-2 aspect-video">
+                          <video
+                            src={vid}
+                            controls
+                            className="w-full h-full object-contain bg-black/5"
+                            onClick={(e) => e.stopPropagation()}
+                          />
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
