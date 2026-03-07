@@ -84,19 +84,23 @@ const Gallery = () => {
 
       {/* Slideshow */}
       <div className="relative w-full aspect-[16/7] overflow-hidden bg-muted/20 group">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.img
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
             key={current}
-            src={images[current]}
-            alt={`Studio & process photo ${current + 1}`}
             custom={direction}
             variants={variants}
             initial="enter"
             animate="center"
             exit="exit"
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+            className="absolute inset-0 w-full h-full"
+          >
+            <img
+              src={images[current]}
+              alt={`Studio & process photo ${current + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </AnimatePresence>
 
         {/* Navigation arrows */}
