@@ -18,13 +18,13 @@ import galleryCardboardPrototype from "@/assets/gallery-cardboard-prototype.png"
 import galleryWeaving from "@/assets/gallery-weaving.png";
 import galleryLeafLamp from "@/assets/gallery-leaf-lamp.png";
 
-const images: { src: string; position?: string; rotate?: number; rotateScale?: number }[] = [
+const images: { src: string; position?: string; rotate?: number }[] = [
   { src: galleryWawPainting, position: "center 100%" },       // 1 - show bottom
   { src: galleryLeafLamp, position: "center 70%" },             // 2 - show more bottom
   { src: galleryBeehiveProgress },                              // 3
   { src: galleryImg3572 },                                      // 4
   { src: gallerySammyTopo },                                    // 5
-  { src: galleryCalligraphy, rotate: -90, rotateScale: 1.35 },  // 6 - rotated CCW, slight crop
+  { src: galleryCalligraphy, rotate: -90 },                     // 6 - rotated CCW
   { src: galleryRockingCardboard },                             // 7
   { src: galleryImg2632, position: "center 20%" },             // 8 - show top
   { src: galleryShiftVase, position: "center 60%" },           // 9 - show more middle/bottom
@@ -32,7 +32,7 @@ const images: { src: string; position?: string; rotate?: number; rotateScale?: n
   { src: galleryIsuProgress },                                  // 11
   { src: galleryImg3485 },                                      // 12
   { src: galleryCardboardPrototype, position: "center 60%" },  // 13 - shift down slightly
-  { src: galleryButterflyDrawings, rotate: -90, rotateScale: 1.5 }, // 14 - rotated CCW, crop top/bottom
+  { src: galleryButterflyDrawings, rotate: -90 },               // 14 - rotated CCW
   { src: galleryImg9495, position: "center 70%" },             // 15 - show more bottom
 ];
 
@@ -108,7 +108,7 @@ const Gallery = () => {
                 className="w-full h-full object-cover"
                 style={{
                   ...(images[current].position ? { objectPosition: images[current].position } : {}),
-                  ...(images[current].rotate ? { transform: `rotate(${images[current].rotate}deg) scale(${images[current].rotateScale || 1})` } : {}),
+                  ...(images[current].rotate ? { transform: `rotate(${images[current].rotate}deg)`, minWidth: "140%", minHeight: "140%" } : {}),
                 }}
               />
             </motion.div>
