@@ -32,6 +32,7 @@ import mcaProgressPapercasting from "@/assets/mca-progress-papercasting.jpg";
 import mcaProgressScaffolding from "@/assets/mca-progress-scaffolding.jpg";
 import mcaProgressWiring from "@/assets/mca-progress-wiring.jpg";
 import mcaProgressLeds from "@/assets/mca-progress-leds.jpg";
+import mcaSensorVideo from "@/assets/mca-sensor-video.mov";
 import isuSitting from "@/assets/isu-sitting.jpg";
 import isuFolded from "@/assets/isu-folded.jpg";
 import isuUnfolded from "@/assets/isu-unfolded.jpg";
