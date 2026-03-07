@@ -25,6 +25,13 @@ import shiftVaseMain from "@/assets/shift-vase-main.jpg";
 import shiftVasePattern1 from "@/assets/shift-vase-pattern1.png";
 import shiftVasePattern2 from "@/assets/shift-vase-pattern2.png";
 import shiftVasePrototype from "@/assets/shift-vase-prototype.png";
+import mcaMicrophone from "@/assets/mca-microphone.jpg";
+import mcaSensorPiece from "@/assets/mca-sensor-piece.jpg";
+import mcaAirlineSeat from "@/assets/mca-airline-seat.jpg";
+import mcaProgressPapercasting from "@/assets/mca-progress-papercasting.jpg";
+import mcaProgressScaffolding from "@/assets/mca-progress-scaffolding.jpg";
+import mcaProgressWiring from "@/assets/mca-progress-wiring.jpg";
+import mcaProgressLeds from "@/assets/mca-progress-leds.jpg";
 import isuSitting from "@/assets/isu-sitting.jpg";
 import isuFolded from "@/assets/isu-folded.jpg";
 import isuUnfolded from "@/assets/isu-unfolded.jpg";
@@ -88,7 +95,15 @@ export const allProjects: Project[] = [
     fullDescription:
       "Working as an intern and then assistant, I helped Denver artist Sammy Lee fabricate pieces for her solo exhibition at the Museum of Contemporary Art (MCA) in Denver. My work included helping build a giant microphone from scaffolding to finished surface, where we applied paper casting—one of Sammy's signature techniques—to the exterior. For another piece featuring a repurposed airline seat, I helped adorn it in foil tape and disco mirror mosaic, then custom-integrated sensors that allow viewers to interact with the piece and activate special lighting. I also integrated LED lights and buttons into one of Sammy's existing works.",
     links: [{ label: "About the exhibition", url: "https://mcadenver.org/exhibitions/sammy-seung-min-lee" }],
-    image: project3,
+    image: mcaMicrophone,
+    detailImages: [
+      mcaSensorPiece,
+      mcaAirlineSeat,
+      { src: mcaProgressPapercasting, caption: "Fabrication process" },
+      { src: mcaProgressScaffolding, caption: "Fabrication process" },
+      { src: mcaProgressWiring, caption: "Fabrication process" },
+      { src: mcaProgressLeds, caption: "Fabrication process" },
+    ],
   },
   {
     id: "SR004",
