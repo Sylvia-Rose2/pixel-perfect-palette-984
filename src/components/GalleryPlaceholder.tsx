@@ -18,22 +18,22 @@ import galleryCardboardPrototype from "@/assets/gallery-cardboard-prototype.png"
 import galleryWeaving from "@/assets/gallery-weaving.png";
 import galleryLeafLamp from "@/assets/gallery-leaf-lamp.png";
 
-const images = [
-  galleryWawPainting,
-  galleryLeafLamp,
-  galleryBeehiveProgress,
-  galleryImg3572,
-  gallerySammyTopo,
-  galleryCalligraphy,
-  galleryRockingCardboard,
-  galleryImg2632,
-  galleryShiftVase,
-  galleryWeaving,
-  galleryIsuProgress,
-  galleryImg3485,
-  galleryCardboardPrototype,
-  galleryButterflyDrawings,
-  galleryImg9495,
+const images: { src: string; position?: string }[] = [
+  { src: galleryWawPainting, position: "center 100%" },       // 1 - show bottom
+  { src: galleryLeafLamp },                                     // 2
+  { src: galleryBeehiveProgress },                              // 3
+  { src: galleryImg3572 },                                      // 4
+  { src: gallerySammyTopo },                                    // 5
+  { src: galleryCalligraphy },                                  // 6 - rotated
+  { src: galleryRockingCardboard },                             // 7
+  { src: galleryImg2632, position: "center 20%" },             // 8 - show top
+  { src: galleryShiftVase, position: "center 15%" },           // 9 - show top
+  { src: galleryWeaving },                                      // 10
+  { src: galleryIsuProgress },                                  // 11
+  { src: galleryImg3485 },                                      // 12
+  { src: galleryCardboardPrototype, position: "center 60%" },  // 13 - shift down slightly
+  { src: galleryButterflyDrawings },                            // 14 - rotated
+  { src: galleryImg9495, position: "center 70%" },             // 15 - show more bottom
 ];
 
 const Gallery = () => {
