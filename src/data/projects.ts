@@ -67,7 +67,7 @@ export interface Project {
 export const allProjects: Project[] = [
   {
     id: "SR001",
-    title: "Stereographica Prototype",
+    title: "Riem",
     category: "Mathematical Art & Design",
     date: "December 2025",
     description:
@@ -75,7 +75,8 @@ export const allProjects: Project[] = [
     fullDescription:
       "These physical models execute the mathematical concept of stereographic projection in an artistic form. When light is positioned at one specific point relative to the sculpture, it casts a precise and unexpected shadow—only when the light is in that exact position.\n\nUsing a combination of CAD and computational design tools (Processing, Grasshopper, TouchDesigner), I designed and 3D-printed the models.\n\nThese are prototypes! I'm currently expanding and refining this concept for my graduate thesis. Larger models, refined finishes, and interactive components will hopefully come together for an exhibition in May 2026.\n\n**What is Stereographic Projection?**\n\nStereographic projection is a mathematical technique that maps points from the surface of a sphere onto a flat plane. Imagine a globe with a light source at the North Pole—the shadows cast by points on the sphere's surface create corresponding points on a flat surface below. This projection preserves angles and creates beautiful, often surprising geometric relationships between the curved and flat worlds. While it distorts sizes (things get larger the farther they are from the projection point), it maintains the shapes of small features, making it both mathematically elegant and visually striking.",
     image: spUncenteredGrid,
-    detailImages: [spAllmodels, spAtlas, spCenteredgrid, spHexagonal],
+    detailImages: [spAllmodels, spAtlas, spCenteredgrid, spHexagonal, riemShadow1, riemShadow2, riemShadow3],
+    detailVideos: [riemVideo1, riemVideo2, riemVideo3],
   },
   {
     id: "SR002",
