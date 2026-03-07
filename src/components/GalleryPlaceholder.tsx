@@ -79,10 +79,10 @@ const Gallery = () => {
         {/* Section header */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-xs sm:text-sm font-medium text-foreground uppercase tracking-widest">
-            Studio & Process
+            Process & Practice
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-md">
-            Prototyping, fabricating, and problem-solving across disciplines
+            A look at how things come together — from early prototypes and material tests to finished pieces, alongside personal art and explorations
           </p>
         </div>
 
