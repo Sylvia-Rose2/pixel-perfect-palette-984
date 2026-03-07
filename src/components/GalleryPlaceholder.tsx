@@ -105,7 +105,7 @@ const Gallery = () => {
               <img
                 src={images[current].src}
                 alt={`Studio & process photo ${current + 1}`}
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${images[current].rotate ? "object-contain" : "object-cover"}`}
                 style={{
                   ...(images[current].position ? { objectPosition: images[current].position } : {}),
                   ...(images[current].rotate ? { transform: `rotate(${images[current].rotate}deg)` } : {}),
