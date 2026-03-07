@@ -18,13 +18,13 @@ import galleryCardboardPrototype from "@/assets/gallery-cardboard-prototype.png"
 import galleryWeaving from "@/assets/gallery-weaving.png";
 import galleryLeafLamp from "@/assets/gallery-leaf-lamp.png";
 
-const images: { src: string; position?: string; rotate?: number }[] = [
+const images: { src: string; position?: string }[] = [
   { src: galleryWawPainting, position: "center 100%" },       // 1 - show bottom
   { src: galleryLeafLamp, position: "center 70%" },             // 2 - show more bottom
   { src: galleryBeehiveProgress },                              // 3
   { src: galleryImg3572 },                                      // 4
   { src: gallerySammyTopo },                                    // 5
-  { src: galleryCalligraphy, rotate: -90 },                     // 6 - rotated CCW
+  { src: galleryCalligraphy },                                  // 6
   { src: galleryRockingCardboard },                             // 7
   { src: galleryImg2632, position: "center 20%" },             // 8 - show top
   { src: galleryShiftVase, position: "center 60%" },           // 9 - show more middle/bottom
@@ -32,7 +32,7 @@ const images: { src: string; position?: string; rotate?: number }[] = [
   { src: galleryIsuProgress },                                  // 11
   { src: galleryImg3485 },                                      // 12
   { src: galleryCardboardPrototype, position: "center 60%" },  // 13 - shift down slightly
-  { src: galleryButterflyDrawings, rotate: -90 },               // 14 - rotated CCW
+  { src: galleryButterflyDrawings },                            // 14
   { src: galleryImg9495, position: "center 70%" },             // 15 - show more bottom
 ];
 
@@ -106,10 +106,7 @@ const Gallery = () => {
                 src={images[current].src}
                 alt={`Studio & process photo ${current + 1}`}
                 className="w-full h-full object-cover"
-                style={{
-                  ...(images[current].position ? { objectPosition: images[current].position } : {}),
-                  ...(images[current].rotate ? { transform: `rotate(${images[current].rotate}deg)`, minWidth: "140%", minHeight: "140%" } : {}),
-                }}
+                style={images[current].position ? { objectPosition: images[current].position } : undefined}
               />
             </motion.div>
           </AnimatePresence>
@@ -187,7 +184,7 @@ const Gallery = () => {
               src={images[current].src}
               alt="Expanded view"
               className="max-w-[90vw] max-h-[90vh] object-contain"
-              style={images[current].rotate ? { transform: `rotate(${images[current].rotate}deg)` } : undefined}
+              
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
