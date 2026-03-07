@@ -85,7 +85,7 @@ export const allProjects: Project[] = [
       { label: "Alamosa Citizen article", url: "https://www.alamosacitizen.com/permanent-interactive-exhibit-we-are-water/" },
     ],
     image: wawAlamosa1,
-    detailImages: [wawAlamosa2, wawAlamosaInfowall],
+    detailImages: [wawAlamosa2, wawAlamosaInfowall, { src: wawHopiArizona, caption: "Hopi Arizona" }],
   },
   {
     id: "SR003",
