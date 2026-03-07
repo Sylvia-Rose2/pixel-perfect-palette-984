@@ -32,6 +32,7 @@ import mcaProgressPapercasting from "@/assets/mca-progress-papercasting.jpg";
 import mcaProgressScaffolding from "@/assets/mca-progress-scaffolding.jpg";
 import mcaProgressWiring from "@/assets/mca-progress-wiring.jpg";
 import mcaProgressLeds from "@/assets/mca-progress-leds.jpg";
+import mcaSensorVideo from "@/assets/mca-sensor-video.mov";
 import isuSitting from "@/assets/isu-sitting.jpg";
 import isuFolded from "@/assets/isu-folded.jpg";
 import isuUnfolded from "@/assets/isu-unfolded.jpg";
@@ -96,6 +97,7 @@ export const allProjects: Project[] = [
       "Working as an intern and then assistant, I helped Denver artist Sammy Lee fabricate pieces for her solo exhibition at the Museum of Contemporary Art (MCA) in Denver. My work included helping build a giant microphone from scaffolding to finished surface, where we applied paper casting—one of Sammy's signature techniques—to the exterior. For another piece featuring a repurposed airline seat, I helped adorn it in foil tape and disco mirror mosaic, then custom-integrated sensors that allow viewers to interact with the piece and activate special lighting. I also integrated LED lights and buttons into one of Sammy's existing works.",
     links: [{ label: "About the exhibition", url: "https://mcadenver.org/exhibitions/sammy-seung-min-lee" }],
     image: mcaMicrophone,
+    detailVideos: [mcaSensorVideo],
     detailImages: [
       mcaSensorPiece,
       mcaAirlineSeat,
