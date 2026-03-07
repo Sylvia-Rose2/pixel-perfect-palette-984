@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroStudio from "@/assets/hero-studio.jpg";
+import heroStudio from "@/assets/portrait-hero.png";
 import { categories } from "@/data/projects";
 import {
   DropdownMenu,
