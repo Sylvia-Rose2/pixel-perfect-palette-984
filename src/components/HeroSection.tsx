@@ -25,7 +25,7 @@ const HeroSection = () => {
             SR<sup className="text-[0.5em] align-super">2</sup>
           </span>
           <span className="text-2xl md:text-4xl lg:text-5xl tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
-            Sylvia Robles: Creative Portfolio
+            Sylvia Rose Robles: Creative Portfolio
           </span>
         </motion.div>
       </div>
