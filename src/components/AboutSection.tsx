@@ -29,7 +29,7 @@ const AboutSection = () => {
           <img 
             src={portrait} 
             alt="Sylvia Robles"
-            className="w-full max-w-sm aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            className="w-full max-w-sm aspect-[3/4] object-cover"
           />
           <h3 className="text-2xl lg:text-3xl mt-6 mb-2" style={{ fontFamily: 'var(--font-display)' }}>
             Background
