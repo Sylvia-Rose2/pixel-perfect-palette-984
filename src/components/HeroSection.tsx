@@ -71,12 +71,6 @@ const HeroSection = () => {
             <div className="text-foreground/80">
               <p>Colorado Based</p>
             </div>
-            <a 
-              href="tel:+12532520439"
-              className="link-underline block"
-            >
-              (253) 252-0439
-            </a>
           </div>
         </div>
 

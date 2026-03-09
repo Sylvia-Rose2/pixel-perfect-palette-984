@@ -32,9 +32,6 @@ const Footer = () => {
           <a href="mailto:aivlysfluffy321@gmail.com" className="link-underline block text-sm">
             aivlysfluffy321@gmail.com
           </a>
-          <a href="tel:+12532520439" className="link-underline block text-sm">
-            (253) 252-0439
-          </a>
         </div>
 
         {/* Location */}
