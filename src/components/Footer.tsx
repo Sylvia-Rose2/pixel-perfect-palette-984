@@ -29,7 +29,7 @@ const Footer = () => {
         {/* Contact */}
         <div className="space-y-3">
           <h4 className="meta-text mb-4">Contact</h4>
-          <a href="mailto:aivlysfluffy321@gmail.com" className="link-underline block text-sm">
+          <a href="mailto:aivlysfluffy321@gmail.com" className="link-underline block text-sm font-bold">
             aivlysfluffy321@gmail.com
           </a>
         </div>
