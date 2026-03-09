@@ -61,7 +61,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="space-y-4 text-sm">
+          <div className="space-y-4 text-sm font-bold">
             <a 
               href="mailto:aivlysfluffy321@gmail.com"
               className="link-underline block"
