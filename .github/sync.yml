@@ -1,0 +1,28 @@
+name: Sync Fork with Upstream
+
+on:
+  schedule:
+    - cron: "0 */1 * * *"   # runs every 1 hours
+  workflow_dispatch:        # allows manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Add upstream repo
+        run: |
+          git remote add upstream https://github.com/abhinav-meh/pixel-perfect-palette-984.git
+          git fetch upstream
+
+      - name: Merge upstream changes
+        run: |
+          git checkout main
+          git merge upstream/main --allow-unrelated-histories
+
+      - name: Push changes
+        run: |
+          git push origin main
