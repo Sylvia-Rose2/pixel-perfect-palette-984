@@ -36,7 +36,7 @@ const AboutSection = () => {
           </h3>
           <p className="text-sm text-muted-foreground">
             ATLAS Institute, CU Boulder<br />
-            Creative Technology & Design MFA<br />
+            Creative Technology & Design MS<br />
             Mathematics, CSU
           </p>
         </motion.div>
@@ -49,7 +49,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <p className="editorial-text mb-6">
-            I'm graduating from the ATLAS Institute's Creative Technology and Design master's program 
+            I'm graduating from the ATLAS Institute's Creative Technology and Design I'm graduating from the ATLAS Institute's Creative Technology and Design master's of science program 
             at CU Boulder with a background in mathematics from CSU. My work sits at the intersection 
             of computational design, physical fabrication, interactive technology, and STEM education.
           </p>
