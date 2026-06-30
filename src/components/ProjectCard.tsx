@@ -143,16 +143,27 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                   {/* Media gallery */}
                   {((detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0)) && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                      {detailVideos?.map((vid, i) => (
-                        <div key={`vid-${i}`} className="relative overflow-hidden sm:col-span-2 aspect-video">
-                          <video
-                            src={vid}
-                            controls
-                            className="w-full h-full object-contain bg-black/5"
-                            onClick={(e) => e.stopPropagation()}
-                          />
-                        </div>
-                      ))}
+                      {detailVideos?.map((vid, i) => {
+                        const ytMatch = vid.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+                        return (
+                          <div key={`vid-${i}`} className="relative overflow-hidden sm:col-span-2 aspect-video" onClick={(e) => e.stopPropagation()}>
+                            {ytMatch ? (
+                              <iframe
+                                src={`https://www.youtube.com/embed/${ytMatch[1]}`}
+                                className="w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            ) : (
+                              <video
+                                src={vid}
+                                controls
+                                className="w-full h-full object-contain bg-black/5"
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
                       {detailImages?.map((img, i) => {
                         const src = typeof img === "string" ? img : img.src;
                         const caption = typeof img === "string" ? undefined : img.caption;
