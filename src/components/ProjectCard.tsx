@@ -143,29 +143,6 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                   {/* Media gallery */}
                   {((detailImages && detailImages.length > 0) || (detailVideos && detailVideos.length > 0)) && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                      {detailImages?.map((img, i) => {
-                        const src = typeof img === "string" ? img : img.src;
-                        const caption = typeof img === "string" ? undefined : img.caption;
-                        const isWide = i === 0 && (detailImages.length % 2 !== 0);
-                        return (
-                          <div
-                            key={i}
-                            className={`relative overflow-hidden cursor-zoom-in ${isWide ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}
-                            onClick={(e) => openLightbox(src, e)}
-                          >
-                            <img
-                              src={src}
-                              alt={caption || `${title} — detail ${i + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                            {caption && (
-                              <span className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-[10px] sm:text-xs px-3 py-1.5 tracking-wide">
-                                {caption}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      })}
                       {detailVideos?.map((vid, i) => (
                         <div key={`vid-${i}`} className="relative overflow-hidden sm:col-span-2 aspect-video">
                           <video
@@ -176,6 +153,37 @@ const ProjectCard = ({ title, category, date, description, fullDescription, link
                           />
                         </div>
                       ))}
+                      {detailImages?.map((img, i) => {
+                        const src = typeof img === "string" ? img : img.src;
+                        const caption = typeof img === "string" ? undefined : img.caption;
+                        const isWide = i === 0 && (detailImages.length % 2 !== 0);
+                        return (
+                          <div
+                            key={i}
+                            className={`relative overflow-hidden cursor-zoom-in ${isWide ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}
+                            style={typeof img !== "string" && img.bgColor ? { backgroundColor: img.bgColor } : undefined}
+                            onClick={(e) => openLightbox(src, e)}
+                          >
+                            <img
+                              src={src}
+                              alt={caption || `${title} — detail ${i + 1}`}
+                              className={`w-full h-full ${typeof img !== "string" && img.contain ? "object-contain" : "object-cover"}`}
+                              style={typeof img !== "string" && img.imagePosition ? { objectPosition: img.imagePosition } : undefined}
+                            />
+                            {typeof img !== "string" && img.bgColor && (
+                              <div
+                                className="absolute inset-0 pointer-events-none"
+                                style={{ background: `linear-gradient(to right, ${img.bgColor} 0%, transparent 30%, transparent 70%, ${img.bgColor} 100%)` }}
+                              />
+                            )}
+                            {caption && (
+                              <span className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-[10px] sm:text-xs px-3 py-1.5 tracking-wide">
+                                {caption}
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>

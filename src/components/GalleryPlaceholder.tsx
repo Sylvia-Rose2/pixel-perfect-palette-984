@@ -82,7 +82,7 @@ const Gallery = () => {
             Process & Practice
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-md">
-            A look at how things come together — from early prototypes and material tests to finished pieces, alongside personal art and explorations
+            A look at how things come together: from early prototypes and material tests to finished pieces, alongside personal art and explorations
           </p>
         </div>
 

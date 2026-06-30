@@ -20,6 +20,27 @@ import riemShadow3 from "@/assets/riem-shadow3.jpg";
 import riemVideo1 from "@/assets/riem-video1.mov";
 import riemVideo2 from "@/assets/riem-video2.mov";
 import riemVideo3 from "@/assets/riem-video3.mov";
+import riemMainVideo from "@/assets/RIEM/RoblesSylvia.mp4";
+import riemThumb from "@/assets/RIEM/s_riem2.jpg";
+import riemGal1A from "@/assets/RIEM/riem2.jpg";
+import riemGal2A from "@/assets/RIEM/ATLAS.jpg";
+import riemGal2B from "@/assets/RIEM/s_ATLAS.jpg";
+import riemGal3A from "@/assets/RIEM/butterfly4.jpg";
+import riemGal3B from "@/assets/RIEM/s_butterfly.jpg";
+import riemGal4A from "@/assets/RIEM/HEX.jpg";
+import riemGal4B from "@/assets/RIEM/s_hex.jpg";
+import riemGal5A from "@/assets/RIEM/cGrid1.jpg";
+import riemGal5B from "@/assets/RIEM/s_cGrid.jpg";
+import riemGal6A from "@/assets/RIEM/flower1.jpg";
+import riemGal6B from "@/assets/RIEM/s_flower.jpg";
+import riemGal7A from "@/assets/RIEM/grid6.jpg";
+import riemGal7B from "@/assets/RIEM/s_grid2.jpg";
+import riemGal8A from "@/assets/RIEM/volcano2.jpg";
+import riemGal8B from "@/assets/RIEM/s_volcano.jpg";
+import riemGal9A from "@/assets/RIEM/yi1.jpg";
+import riemGal9B from "@/assets/RIEM/s_yi.jpg";
+import riemGal10A from "@/assets/RIEM/hindi2.jpg";
+import riemGal10B from "@/assets/RIEM/s_hindi.jpg";
 import rockingchairSide from "@/assets/rockingchair-side.jpg";
 import rockingchairSitting from "@/assets/rockingchair-sitting.jpg";
 import rockingchairFront from "@/assets/rockingchair-front.jpg";
@@ -48,6 +69,9 @@ import origamiChairVideo from "@/assets/origami-chair.webm";
 export interface DetailImage {
   src: string;
   caption?: string;
+  imagePosition?: string;
+  contain?: boolean;
+  bgColor?: string;
 }
 
 export interface Project {
@@ -167,6 +191,30 @@ export const allProjects: Project[] = [
     detailImages: [shiftVasePattern1, shiftVasePattern2, shiftVasePrototype],
   },
   {
+    id: "SR009",
+    title: "RIEM",
+    category: "Mathematical Art & Design",
+    date: "May 2026",
+    description:
+      "An interactive mathematical art installation exploring stereographic projection through light and shadow.",
+    fullDescription:
+      "Named after the Riemann Sphere, the mathematical concept at the heart of stereographic projection, Riem translates abstract geometry into a hands-on experience. Each sculpture encodes multiple projections into its three-dimensional form, casting precise, unexpected shadows that shift and transform as the light moves.\n\nA single sculpture can reveal a flower blooming, butterfly wings flapping, or a grid demonstrating how angles are preserved as geometry transforms, all depending on where the light lands. Visitors control the light source directly, discovering in real time how changing its position alters the projection entirely.\n\nThe sculptures were 3D-printed with hand-finished surfaces, designed so that the geometry of the object and the geometry of its shadow are inseparable.\n\nRiem debuted at CU Boulder's ATLAS Expo in May 2026.\n\n**What is Stereographic Projection?**\n\nStereographic projection maps points from the surface of a sphere onto a flat plane. Imagine a globe with a light source at the North Pole: the shadows cast by the sphere's surface create corresponding points on a flat plane below. It preserves angles and produces beautiful, often surprising geometric relationships between curved and flat space. While it distorts scale, it maintains the shapes of small features, making it both mathematically elegant and visually striking.",
+    image: riemThumb,
+    detailVideos: [riemMainVideo],
+    detailImages: [
+      riemGal1A, riemThumb,
+      { src: riemGal2A, contain: true, bgColor: "rgb(217,218,222)" }, riemGal2B,
+      { src: riemGal3A, contain: true, bgColor: "rgb(214,215,220)" }, riemGal3B,
+      { src: riemGal4A, contain: true, bgColor: "rgb(202,203,208)" }, riemGal4B,
+      riemGal5A, riemGal5B,
+      riemGal6A, riemGal6B,
+      { src: riemGal7A, contain: true, bgColor: "rgb(206,207,212)" }, riemGal7B,
+      { src: riemGal8A, contain: true, bgColor: "rgb(200,200,207)" }, riemGal8B,
+      riemGal9A, riemGal9B,
+      { src: riemGal10A, contain: true, bgColor: "rgb(198,198,206)" }, riemGal10B,
+    ],
+  },
+  {
     id: "SR008",
     title: "Kotatsu Rocking Chair",
     category: "Material Study, Design & Fabrication",
@@ -190,27 +238,27 @@ export const categories: Category[] = [
   {
     name: "Interactive Installations",
     slug: "interactive-installations",
-    projectIds: ["SR003", "SR002", "SR004"],
+    projectIds: ["SR003", "SR002", "SR004", "SR009"],
   },
   {
     name: "Computational Design",
     slug: "computational-design",
-    projectIds: ["SR005", "SR007", "SR001"],
+    projectIds: ["SR005", "SR007", "SR001", "SR009"],
   },
   {
     name: "Mathematical Art",
     slug: "mathematical-art",
-    projectIds: ["SR001", "SR005"],
+    projectIds: ["SR001", "SR005", "SR009"],
   },
   {
     name: "Fabrication & Making",
     slug: "fabrication-and-making",
-    projectIds: ["SR006", "SR008", "SR002", "SR003"],
+    projectIds: ["SR006", "SR008", "SR002", "SR003", "SR009"],
   },
   {
     name: "Exhibit Design",
     slug: "exhibit-design",
-    projectIds: ["SR002", "SR003"],
+    projectIds: ["SR002", "SR003", "SR009"],
   },
 ];
 

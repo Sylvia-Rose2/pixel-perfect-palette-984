@@ -12,7 +12,7 @@ const AboutSection = () => {
         className="mb-16 lg:mb-24"
       >
         <p className="editorial-text max-w-3xl text-xl lg:text-2xl leading-relaxed">
-          I see mathematics as a natural science—a universal language that describes the world 
+          I see mathematics as a natural science, a universal language that describes the world
           around us. I use math to inspire art and design, and I use art as a way to teach 
           mathematical concepts.
         </p>
@@ -49,15 +49,15 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <p className="editorial-text mb-6">
-            I'm graduating from the ATLAS Institute's Creative Technology and Design I'm graduating from the ATLAS Institute's Creative Technology and Design master's of science program 
-            at CU Boulder with a background in mathematics from CSU. My work sits at the intersection 
-            of computational design, physical fabrication, interactive technology, and STEM education.
+            I graduated from the ATLAS Institute's Creative Technology and Design master's program
+            at CU Boulder with a background in mathematics from CSU. My work sits at the intersection
+            of computational design, physical fabrication, interactive technology, traditional art, and STEM education.
           </p>
           <p className="editorial-text mb-6">
             My process usually starts with a goal: fix a problem or communicate an idea. From there, 
             I research, experiment, and build. I'm equally comfortable writing code in Grasshopper or 
             Processing as I am working with wood, paper, or electronics. I like the precision of 
-            computational design and the tactile satisfaction of hands-on fabrication—and I like 
+            computational design and the tactile satisfaction of hands-on fabrication, and I like
             combining them.
           </p>
           <p className="editorial-text mb-6">
@@ -67,7 +67,7 @@ const AboutSection = () => {
             pieces for her MCA exhibition and integrating sensors and lighting into her work.
           </p>
           <p className="editorial-text">
-            I'm looking for work in museums, fabrication, R&D, or independent contract work—places 
+            I'm looking for work in museums, fabrication, R&D, or independent contract work, in places
             where I can solve problems creatively and help people see familiar things in new ways.
           </p>
         </motion.div>

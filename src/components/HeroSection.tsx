@@ -24,7 +24,7 @@ const HeroSection = () => {
           <span className="border-[3px] border-foreground px-4 py-2 md:px-5 md:py-3 text-4xl md:text-6xl lg:text-7xl tracking-tighter" style={{ fontFamily: 'var(--font-display)' }}>
             SR<sup className="text-[0.5em] align-super">2</sup>
           </span>
-          <span className="text-2xl md:text-4xl lg:text-5xl tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          <span className="text-2xl md:text-4xl lg:text-5xl tracking-tight font-bold" style={{ fontFamily: 'var(--font-display)' }}>
             Sylvia Rose Robles: Creative Portfolio
           </span>
         </motion.div>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             <p className="meta-text mb-2">Creative Technologist & Fabricator</p>
             <p className="editorial-text max-w-md">
               I work at the intersection of math, art, and hands-on making. I use mathematics as both 
-              inspiration and educational tool—designing pieces that make abstract concepts tangible 
+              inspiration and educational tool, designing pieces that make abstract concepts tangible
               and creating interactive experiences that help people see the world through a different lens.
             </p>
           </div>
