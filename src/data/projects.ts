@@ -20,7 +20,6 @@ import riemShadow3 from "@/assets/riem-shadow3.jpg";
 import riemVideo1 from "@/assets/riem-video1.mov";
 import riemVideo2 from "@/assets/riem-video2.mov";
 import riemVideo3 from "@/assets/riem-video3.mov";
-import riemMainVideo from "@/assets/RIEM/RoblesSylvia.mp4";
 import riemThumb from "@/assets/RIEM/s_riem2.jpg";
 import riemGal1A from "@/assets/RIEM/riem2.jpg";
 import riemGal2A from "@/assets/RIEM/ATLAS.jpg";
@@ -200,7 +199,7 @@ export const allProjects: Project[] = [
     fullDescription:
       "Named after the Riemann Sphere, the mathematical concept at the heart of stereographic projection, Riem translates abstract geometry into a hands-on experience. Each sculpture encodes multiple projections into its three-dimensional form, casting precise, unexpected shadows that shift and transform as the light moves.\n\nA single sculpture can reveal a flower blooming, butterfly wings flapping, or a grid demonstrating how angles are preserved as geometry transforms, all depending on where the light lands. Visitors control the light source directly, discovering in real time how changing its position alters the projection entirely.\n\nThe sculptures were 3D-printed with hand-finished surfaces, designed so that the geometry of the object and the geometry of its shadow are inseparable.\n\nRiem debuted at CU Boulder's ATLAS Expo in May 2026.\n\n**What is Stereographic Projection?**\n\nStereographic projection maps points from the surface of a sphere onto a flat plane. Imagine a globe with a light source at the North Pole: the shadows cast by the sphere's surface create corresponding points on a flat plane below. It preserves angles and produces beautiful, often surprising geometric relationships between curved and flat space. While it distorts scale, it maintains the shapes of small features, making it both mathematically elegant and visually striking.",
     image: riemThumb,
-    detailVideos: [riemMainVideo],
+    detailVideos: [],
     detailImages: [
       riemGal1A, riemThumb,
       { src: riemGal2A, contain: true, bgColor: "rgb(217,218,222)" }, riemGal2B,
