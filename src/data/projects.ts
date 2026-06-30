@@ -237,17 +237,17 @@ export const categories: Category[] = [
   {
     name: "Interactive Installations",
     slug: "interactive-installations",
-    projectIds: ["SR003", "SR002", "SR004", "SR009"],
+    projectIds: ["SR009", "SR003", "SR002", "SR004"],
   },
   {
     name: "Computational Design",
     slug: "computational-design",
-    projectIds: ["SR005", "SR007", "SR001", "SR009"],
+    projectIds: ["SR009", "SR005", "SR007", "SR001"],
   },
   {
     name: "Mathematical Art",
     slug: "mathematical-art",
-    projectIds: ["SR001", "SR005", "SR009"],
+    projectIds: ["SR009", "SR001", "SR005"],
   },
   {
     name: "Fabrication & Making",
